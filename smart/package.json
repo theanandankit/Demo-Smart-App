@@ -1,0 +1,16 @@
+{
+  "name": "smart",
+  "version": "1.0.0",
+  "description": "Smart App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -p 9090 -c-1"
+  },
+  "author": "Ankit kumar",
+  "license": "ISC",
+  "dependencies": {
+    "fhirclient": "0.1.12",
+    "http-server": "^0.12.3"
+  }
+}
