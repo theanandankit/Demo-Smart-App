@@ -1,0 +1,14 @@
+<html>
+     <head>
+        <script src="https://cdn.jsdelivr.net/npm/fhirclient@2.3.1/build/fhir-client.min.js"></script>
+        <script>
+            FHIR.oauth2.ready()
+            .then(client => client.encounter.read())
+            .then(results => {
+                console.log(results)
+            })
+            .catch(console.error);
+        </script>
+    </head>
+    <body>Loading the encounter...</body
+</html>

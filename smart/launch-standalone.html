@@ -4,9 +4,9 @@
   <script>
     FHIR.oauth2.authorize({
       "client_id": "smartClient",
-      "scope": "patient/*.read launch/patient",
+      "scope": "patient/*.read launch/patient launch/encounter encounter/*.read",
       "iss": "http://localhost:8080/openmrs/ws/fhir2/R4",
-      "redirect_uri": "index.html"
+      "redirect_uri": "encounter.html"
     })
     </script>
 </head>
