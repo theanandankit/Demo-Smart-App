@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: sticky;
+}
+
+.mainheader {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerbutton {
+  padding: 10px 45px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 10px;
+  border-style: hidden;
+  margin-right: 60px;
+  background-image: linear-gradient(to right, #cfa7fc, #bb7cf7, #ca72fd);
+}
+
+#openmrslogo {
+  width: 250px;
+  height: 70px;
+  padding-left: 60px;
+}
+
+#mainnav a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  margin-right: 50px;
+}
+
+#patientcontainer {
+  width: 100%;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#patientinfo {
+  width: 70%;
+  margin-left: 100px;
+  display: block;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#patientgrapcontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#patientgraphinfo {
+  width: 200px;
+  height: 100px;
+}

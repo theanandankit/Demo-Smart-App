@@ -1,28 +1,82 @@
 <html>
-     <head>
-        <script src="https://cdn.jsdelivr.net/npm/fhirclient@2.3.1/build/fhir-client.min.js"></script>
-        <script>
-        FHIR.oauth2.ready()
-            .then(client => client.patient.read())
-            .then(results => {
-                console.log(results)
-                console.log(client)
-                document.body.innerHTML = "Id : " + results.id + "<br>" +
-                "Full Name : " + results.name[0].given[0] + " " + results.name[0].family + "<br>" +
-                "Gender : " + results.gender + "<br>" +
-                "BirthDate : " + results.birthDate + "<br>"
-            })
-            .catch(console.error);
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/fhirclient@2.3.1/build/fhir-client.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      FHIR.oauth2
+        .ready()
+        .then((client) => client.patient.read())
+        .then((results) => {
+          console.log(results);
+          console.log(client);
+          document.body.innerHTML =
+            "Id : " +
+            results.id +
+            "<br>" +
+            "Full Name : " +
+            results.name[0].given[0] +
+            " " +
+            results.name[0].family +
+            "<br>" +
+            "Gender : " +
+            results.gender +
+            "<br>" +
+            "BirthDate : " +
+            results.birthDate +
+            "<br>";
+        })
+        .catch(console.error);
     </script>
-        
-        <script>
-            FHIR.oauth2.ready()
-            .then(client => client.encounter.read())
-            .then(results => {
-                console.log(results)
-            })
-            .catch(console.error);
-        </script>
-    </head>
-    <body>Loading the encounter...</body
+
+    <script>
+      FHIR.oauth2
+        .ready()
+        .then((client) => client.encounter.read())
+        .then((results) => {
+          console.log(results);
+        })
+        .catch(console.error);
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="mainheader">
+        <div>
+          <img id="openmrslogo" src="images/logo.png" />
+        </div>
+
+        <nav id="mainnav">
+          <a href="@">Home</a>
+          <a href="@">About </a>
+        </nav>
+        <div>
+          <button class="headerbutton">New Rwquest</button>
+          <button class="headerbutton">Logout</button>
+        </div>
+      </div>
+
+      <div id="patientcontianer">
+        <div id="patientinfo">
+          <h3>Name: Ankit kumar</h3>
+          <h3>DOB: 29/09/1996</h3>
+          <h3>Gender: male</h3>
+          <h3>Contact: +919024923695</h3>
+        </div>
+      </div>
+
+      <div id="patientgraphcontainer">
+        <canvas id="patientweight" width="100px" height="20px"></canvas>
+
+        <div id="patientgraphinfo"></div>
+      </div>
+    </header>
+    <script src="js/encounter.js"></script>
+  </body>
 </html>
