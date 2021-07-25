@@ -31,6 +31,12 @@ header {
   border-style: hidden;
   margin-right: 60px;
   background-image: linear-gradient(to right, #cfa7fc, #bb7cf7, #ca72fd);
+  cursor: pointer;
+}
+
+.headerbutton:hover {
+  background-color: linear-gradient(to right, #ca72fd, #bb7cf7, #cfa7fc);
+  transition: 0.8;
 }
 
 #openmrslogo {
@@ -46,15 +52,32 @@ header {
   margin-right: 50px;
 }
 
-#patientcontainer {
+.patientcard {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.patientcontainer {
   width: 100%;
-  margin-left: 100px;
-  margin-right: 100px;
+  height: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
 }
 
 #patientinfo {
-  width: 70%;
-  margin-left: 100px;
+  width: 100%;
   display: block;
   height: fit-content;
   display: flex;
@@ -62,13 +85,33 @@ header {
   align-items: center;
 }
 
-#patientgrapcontainer {
+.graphcontainer {
+  margin: 50px;
   display: flex;
-  justify-content: space-between;
+}
+
+.subgraphcontainer {
+  flex: 50%;
+}
+
+.patientweightinfocard {
+  padding-right: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   align-items: center;
 }
 
-#patientgraphinfo {
-  width: 200px;
-  height: 100px;
+.patientweightinfo {
+  width: 100%;
+  height: 50%;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
 }

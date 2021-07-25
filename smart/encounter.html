@@ -9,41 +9,6 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap"
       rel="stylesheet"
     />
-    <script>
-      FHIR.oauth2
-        .ready()
-        .then((client) => client.patient.read())
-        .then((results) => {
-          console.log(results);
-          console.log(client);
-          document.body.innerHTML =
-            "Id : " +
-            results.id +
-            "<br>" +
-            "Full Name : " +
-            results.name[0].given[0] +
-            " " +
-            results.name[0].family +
-            "<br>" +
-            "Gender : " +
-            results.gender +
-            "<br>" +
-            "BirthDate : " +
-            results.birthDate +
-            "<br>";
-        })
-        .catch(console.error);
-    </script>
-
-    <script>
-      FHIR.oauth2
-        .ready()
-        .then((client) => client.encounter.read())
-        .then((results) => {
-          console.log(results);
-        })
-        .catch(console.error);
-    </script>
   </head>
   <body>
     <header>
@@ -57,24 +22,28 @@
           <a href="@">About </a>
         </nav>
         <div>
-          <button class="headerbutton">New Rwquest</button>
+          <button class="headerbutton">New Request</button>
           <button class="headerbutton">Logout</button>
         </div>
       </div>
-
-      <div id="patientcontianer">
-        <div id="patientinfo">
-          <h3>Name: Ankit kumar</h3>
-          <h3>DOB: 29/09/1996</h3>
-          <h3>Gender: male</h3>
-          <h3>Contact: +919024923695</h3>
+      <div class="patientcard">
+        <div class="patientcontainer">
+          <div id="patientinfo">
+            <h3 id="patientname">Patient Name: Ankit kumar</h3>
+            <h3 id="patientdob">DOB: 29/09/1996</h3>
+            <h3 id="patientgender">Gender: male</h3>
+            <h3 id="patientcontact">Contact: +919024923695</h3>
+          </div>
         </div>
       </div>
 
-      <div id="patientgraphcontainer">
-        <canvas id="patientweight" width="100px" height="20px"></canvas>
-
-        <div id="patientgraphinfo"></div>
+      <div class="graphcontainer">
+        <div class="subgraphcontainer">
+          <canvas id="patientheight"></canvas>
+        </div>
+        <div class="subgraphcontainer">
+          <canvas id="patientweight"></canvas>
+        </div>
       </div>
     </header>
     <script src="js/encounter.js"></script>
