@@ -1,9 +1,10 @@
 var ctx = document.getElementById("patientweight").getContext("2d");
-var name = document.getAnimations("patientname");
-var dob = document.getAnimations("patientdob");
-var gender = document.getAnimations("patientgender");
-var contact = document.getAnimations("patientcontact");
+var patientName = document.getElementById("patientname");
+var patientDOB = document.getElementById("patientdob");
+var patientGender = document.getElementById("patientgender");
+var patientContact = document.getElementById("patientcontact");
 
+// fatching the resource
 FHIR.oauth2.ready(onReady, onError);
 
 var myChart = new Chart(ctx, {
@@ -85,22 +86,35 @@ function onReady(smart) {
   if (smart.hasOwnProperty("patient")) {
     var patientPromise = smart.patient.read();
     var encounterPromise = smart.encounter.read();
-    var patient = Promise.resolve(patientPromise);
-    patient.then(
+    var patientData = Promise.resolve(patientPromise);
+    patientData.then(
+      (results) => {
+        console.log(results);
+        // setting the patient information
+
+        console.log(results.name[0].given[0]);
+        patientName.innerText =
+          "Patient Name: " +
+          results.name[0].given[0] +
+          " " +
+          results.name[0].family;
+        patientGender.innerText = "Gender: " + results.gender;
+        patientDOB.innerText = "DOB:" + results.birthDate;
+        patientContact.innerText = "Contact: " + results.telecom[0].value;
+      },
+      () => {
+        console.log("Failed to fatch the patient resource");
+      }
+    );
+
+    var encounterData = Promise.resolve(encounterPromise);
+    encounterData.then(
       (results) => {
         console.log(results);
       },
       () => {
-        console.log("failed");
+        console.log("Failed to fatch the encounter resource");
       }
-    );
-
-    var encounter = Promise.resolve(encounterPromise);
-    encounter.then(
-      (result) => {
-        console.log(result);
-      },
-      () => {}
     );
   }
 }
