@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="mainheader">
+        <div>
+          <img id="openmrslogo" src="images/logo.png" />
+        </div>
+
+        <nav id="mainnav">
+          <a href="@">Home</a>
+          <a href="@">About </a>
+        </nav>
+        <div>
+          <button class="headerbutton">New Request</button>
+          <button class="headerbutton">Logout</button>
+        </div>
+      </div>
+      <div class="patientcard">
+        <div class="patientcontainer">
+          <div id="patientinfo">
+            <h3 id="patientname"></h3>
+            <h3 id="patientdob"></h3>
+            <h3 id="patientgender"></h3>
+            <h3 id="patientcontact"></h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="graphcontainer">
+        <div class="subgraphcontainer">
+          <canvas id="patientheight"></canvas>
+        </div>
+        <div class="subgraphcontainer">
+          <canvas id="patientweight"></canvas>
+        </div>
+      </div>
+    </header>
+    <script src="js/encounter.js"></script>
+  </body>
+</html>
