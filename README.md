@@ -20,7 +20,7 @@ To run the SMART APP locally, Follow the instruction mentioned below:
 
         npm start
 
-# SMART LAUNCH
+## SMART LAUNCH
 
 For standalone launch enter the url http://127.0.0.1:9090/launch-standalone.html
 
