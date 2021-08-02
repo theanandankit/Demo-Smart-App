@@ -11,6 +11,7 @@ var heightDate = [];
 FHIR.oauth2.ready(onReady, onError);
 
 function onReady(smart) {
+  console.log(smart);
   if (smart.hasOwnProperty("patient")) {
     var patientPromise = smart.patient.read();
     var encounterPromise = smart.encounter.read();
