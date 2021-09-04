@@ -20,6 +20,8 @@ To run the SMART APP locally, Follow the instruction mentioned below:
 
         npm start
 
+SMART-APP start running at 9190 port. [launch-standalone.html](https://github.com/theanandankit/Demo-Smart-App/blob/master/launch-standalone.html) is the entry point of SMART APP and contains all metadata.
+
 ## SMART LAUNCH
 
 For standalone launch enter the url http://127.0.0.1:9090/launch-standalone.html
