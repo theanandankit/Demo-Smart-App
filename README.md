@@ -2,6 +2,12 @@
 
 This repository contains a SMART APP which is based on [JavaScript-Client Library](http://docs.smarthealthit.org/client-js/).
 
+## Authenticationn flow
+
+<img src="images/flow.png">
+
+## Setup 
+
 Ensure you have [node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed locally.
 
 To run the SMART APP locally, Follow the instruction mentioned below:
